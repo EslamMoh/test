@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Billings</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th><% if current_user.admin? %>
+        User email
+      <%end%></th>
+      <th>Amount</th>
+      <th>Token</th>
+      <th>Reciep</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @billings.each do |billing| %>
+      <tr>
+        <td><% if current_user.admin? %>
+          <%= billing.user.email %>
+        <%end%>
+        </td>
+        <td><%= billing.amount %></td>
+        <td><%= billing.token %></td>
+        <td><%= billing.reciep_id %></td>
+        <td><%= link_to 'Show', billing %></td>
+        <% if current_user.admin? %>
+        <td><%= link_to 'Edit', edit_billing_path(billing.id) %></td>
+        <td><%= link_to 'Destroy', billing, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <%end%>
+
+    <% end %>
+      </tr>
+
+  </tbody>
+</table>
+
+<br>
+
+<%=link_to "About" , about_path%> |
+<%=link_to "Home" , root_path%> | 
+<%=link_to "logout" , destroy_user_session_path, method: :delete%>

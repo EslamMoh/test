@@ -1,0 +1,10 @@
+<h1>Welcome Home
+<% if current_user.admin? %>
+Admin
+<% end %>
+</h1>
+
+<p>You logged in as : <%= current_user.email %></p>
+<p><%=link_to "About" , about_path%> |
+<%=link_to "Billings" , billings_path%> |
+<%=link_to "logout" , destroy_user_session_path, method: :delete%></p>

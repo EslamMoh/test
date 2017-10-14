@@ -1,0 +1,2 @@
+module BillingHistoriesHelper
+end
