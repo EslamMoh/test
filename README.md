@@ -21,6 +21,4 @@ Things you may want to cover:
 
 * Deployment instructions
 
-* First edit on the project
-
-* second edit on the project : Admin privileges added , edits on the view
+* Admin privileges added , edits on the view
